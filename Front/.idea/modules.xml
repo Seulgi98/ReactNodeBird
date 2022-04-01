@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ReactNodeBird.iml" filepath="$PROJECT_DIR$/.idea/ReactNodeBird.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/react-nodebird.iml" filepath="$PROJECT_DIR$/.idea/react-nodebird.iml" />
     </modules>
   </component>
 </project>
