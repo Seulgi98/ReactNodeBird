@@ -1,19 +1,24 @@
-// import '../styles/globals.css'
-//
-// function MyApp({ Component, pageProps }) {
-//   return <Component {...pageProps} />
-// }
-//
-// export default MyApp
 import React from 'react';
-import AppLayout from "../componets/AppLayout";
+import PropTypes from "prop-types";
+import Head from "next/head";
+import 'antd/dist/antd.css'
 
-const Home = () => {
+//전부 공
+
+const App = ({Component}) => {
   return (
-    <AppLayout>
-      <div>Hello, Next!</div>
-    </AppLayout>
+    <>
+      <Head>
+        <meta charSet="utf-8"/>
+        <title>Node Bird</title>
+      </Head>
+      <Component/>
+    </>
   );
+};
+
+App.prototype = {
+  Component: PropTypes.elementType.isRequired
 }
 
-export default Home;
+export default App;
