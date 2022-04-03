@@ -1,7 +1,9 @@
 import React, {useState, useCallback} from 'react';
 import {Form, Input, Button} from 'antd';
 import Link from 'next/link';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
+import useInput from "../hooks/useInput";
 
 const ButtonWrapper = styled.div`
   margin-Top: 10px;
@@ -12,17 +14,9 @@ const FormWrapper = styled(Form)`
 `;
 
 const LoginForm = ({setIsLoggedIn}) => {
-  const [id, setId] = useState('');
-  const onChangeId = useCallback((e) => {
-    setId(e.target.value);
-  }, []);
+  const [id, onChangeId] = useInput('');
+  const [password, onChangePassword] = useInput('');
 
-  const [password, setPassword] = useState('');
-  const onChangePassword = useCallback((e) => {
-    setPassword(e.target.value);
-  }, []);
-
-  // const style = useMemo(() => ({marginTop: 10}), []);
   const onsubmitForm = useCallback(() => {
     console.log(id, password);
     setIsLoggedIn(true); //로그인을 하는 순간 isLoggedIn이 true로 바뀌고 UserProfile로 바뀜
@@ -53,5 +47,9 @@ const LoginForm = ({setIsLoggedIn}) => {
     </FormWrapper>
   );
 };
+
+LoginForm.propTypes = {
+  setIsLoggedIn: propTypes.func.isRequired
+}
 
 export default LoginForm;
