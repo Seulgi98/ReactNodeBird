@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08f8ef57-4aaf-477f-9db1-ef622f55ae9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Front/.eslintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front/componets/LoginForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front/componets/UserProfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/componets/AppLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/AppLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/pages/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pages/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pages/signup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Front/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +30,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27AoKK4bZEVl0aTDUGWK2aDGcEn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,7 +61,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648772185988</updated>
-      <workItem from="1648772187052" duration="6597000" />
+      <workItem from="1648772187052" duration="6903000" />
+      <workItem from="1648875214587" duration="8217000" />
     </task>
     <servers />
   </component>
