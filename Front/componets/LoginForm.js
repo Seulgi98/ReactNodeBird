@@ -13,19 +13,18 @@ const FormWrapper = styled(Form)`
 
 const LoginForm = ({setIsLoggedIn}) => {
   const [id, setId] = useState('');
-  const [password, setPassword] = useState('');
-
   const onChangeId = useCallback((e) => {
     setId(e.target.value);
   }, []);
 
+  const [password, setPassword] = useState('');
   const onChangePassword = useCallback((e) => {
     setPassword(e.target.value);
   }, []);
 
   // const style = useMemo(() => ({marginTop: 10}), []);
-  const onsubmitForm = useCallback((e) => {
-    console.log(e.target.value); //error 발생?
+  const onsubmitForm = useCallback(() => {
+    console.log(id, password);
     setIsLoggedIn(true); //로그인을 하는 순간 isLoggedIn이 true로 바뀌고 UserProfile로 바뀜
   },[id, password]);
 
@@ -37,7 +36,7 @@ const LoginForm = ({setIsLoggedIn}) => {
         <Input name="user-id" value={id} onChange={onChangeId} required/>
       </div>
       <div>
-        <label htmlFor="user-id">비밀번호</label>
+        <label htmlFor="user-password">비밀번호</label>
         <br />
         <Input
           name="user-password"
@@ -48,7 +47,6 @@ const LoginForm = ({setIsLoggedIn}) => {
         />
       </div>
       <ButtonWrapper>
-      {/*<ButtonWrapper style={style}> useMemo를 쓸 경우 */}
         <Button type="primary" htmlType="submit" loading={false}>로그인</Button>
         <Link href="/signup"><a><Button>회원가입</Button></a></Link>
       </ButtonWrapper>
