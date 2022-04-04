@@ -42,7 +42,7 @@ const AppLayout = ({children}) => {
         {children}
         </Col>
         <Col xs={24} md={6}>
-          <a href="https://velog.io/@hanny1120" target="_blank" rel="noreferrer noopener">Seulgi98 Velog</a>
+          <a href="https://github.com/Seulgi98" target="_blank" rel="noreferrer noopener">Made by seulgi98</a>
         </Col>
       </Row>
     </div>
