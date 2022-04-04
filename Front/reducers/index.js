@@ -1,5 +1,6 @@
 // 초기 state
-import {store} from "next/dist/build/output/store";
+// import {store} from "next/dist/build/output/store";
+import {HYDRATE} from "next-redux-wrapper";
 
 const initialState = {
   user: {
@@ -34,6 +35,9 @@ export const logoutAction = () => {
 const rootReducer = (state = initialState, acticon) => {
   switch (acticon.type) {
     // action을 받아서 다음 state로 바뀜. init state와 다른 state가 생성됨.
+    case HYDRATE:
+      console.log('HYDRATE :',acticon);
+      return {...state, ...acticon.payload};
     case 'LOG_IN':
       return {
         ...state,
@@ -52,6 +56,8 @@ const rootReducer = (state = initialState, acticon) => {
           user: null,
         }
       }
+    default:
+      return state;
   }
 };
 

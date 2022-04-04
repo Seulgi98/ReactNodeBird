@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08f8ef57-4aaf-477f-9db1-ef622f55ae9e" name="Changes" comment="Signup Page &amp; custom hooks">
-      <change afterPath="$PROJECT_DIR$/Front/reducers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front/store/configureStore.js" afterDir="false" />
+    <list default="true" id="08f8ef57-4aaf-477f-9db1-ef622f55ae9e" name="Changes" comment="redux implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/componets/AppLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/AppLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/UserProfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/store/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/store/configureStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Front/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-nodebird/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +67,7 @@
       <workItem from="1648875214587" duration="10993000" />
       <workItem from="1648953747865" duration="9288000" />
       <workItem from="1649029727535" duration="6913000" />
-      <workItem from="1649046780780" duration="2460000" />
+      <workItem from="1649046780780" duration="5349000" />
     </task>
     <task id="LOCAL-00001" summary="profile page">
       <created>1648996771722</created>
@@ -100,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649003930473</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="redux implementation">
+      <created>1649049294412</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1649049294412</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +126,7 @@
     <MESSAGE value="FollowList, NicknameEditForm" />
     <MESSAGE value="Error solve" />
     <MESSAGE value="Signup Page &amp; custom hooks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Signup Page &amp; custom hooks" />
+    <MESSAGE value="redux implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="redux implementation" />
   </component>
 </project>
