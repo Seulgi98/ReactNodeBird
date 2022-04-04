@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import 'antd/dist/antd.css'
 
-//전부 공
+import wrapper  from "../store/configureStore";
 
-const App = ({Component}) => {
+//전부 공통
+
+const NodeBird = ({Component}) => {
   return (
     <>
       <Head>
@@ -17,8 +19,9 @@ const App = ({Component}) => {
   );
 };
 
-App.prototype = {
-  Component: PropTypes.elementType.isRequired
+NodeBird.propTypes = {
+  Component: PropTypes.elementType.isRequired,
 }
 
-export default App;
+export default wrapper.withRedux(NodeBird);
+// export default NodeBird;
