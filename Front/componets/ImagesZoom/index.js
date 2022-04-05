@@ -18,38 +18,80 @@ const Header = styled.header`
   position: relative;
   padding: 0;
   text-align: center;
-  
+
   & h1 {
     margin: 0;
     font-size: 17px;
     color: #333;
     line-height: 44px;
   }
+
+  & button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 15px;
+    line-height: 14px;
+    cursor: pointer;
+  }
 `;
 
-const CloseBtn = styled.button`
-
+const SlickWrapper = styled.div`
+  height: calc(100% - 44px);
+  background: #090909;
 `;
+
+const ImgWrapper = styled.div`
+  padding: 32px;
+  text-align: center;
+  
+  & img {
+    margin: 0 auto;
+    max-height: 750px;
+  }
+`;
+
+const Indicator = styled.div`
+  text-align: center;
+  
+  & > div {
+    width: 75px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    background: #313131;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+  }
+`
 
 const ImagesZoom = ({images, onClose}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   return (
-    <div>
-      <Slick
-        initialSlide={0}
-        afterChange={(slide) => setCurrentSlide(slide)}
-        infinite
-        arrows={false} //화살표 지우기(손으로만 넘김)
-        slidesToShow={1}
-        slidesToScroll={1}
-      >
-        {images.map((v) => (
-          <div key={v.src}>
-            <img src={v.src} alt={v.src}/>
-          </div>
-        ))}
-      </Slick>
-    </div>
+    <Overlay>
+      <Header>
+        <h1>상세 이미지</h1>
+        <button onClick={onClose}>X</button>
+      </Header>
+      <div>
+        <Slick
+          initialSlide={0}
+          afterChange={(slide) => setCurrentSlide(slide)}
+          infinite
+          arrows={false} //화살표 지우기(손으로만 넘김)
+          slidesToShow={1}
+          slidesToScroll={1}
+        >
+          {images.map((v) => (
+            <ImgWrapper key={v.src}>
+              <img src={v.src} alt={v.src}/>
+            </ImgWrapper>
+          ))}
+        </Slick>
+      </div>
+    </Overlay>
   );
 };
 
