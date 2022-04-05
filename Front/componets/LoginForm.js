@@ -1,7 +1,6 @@
-import React, {useState, useCallback} from 'react';
+import React, {useCallback} from 'react';
 import {Form, Input, Button} from 'antd';
 import Link from 'next/link';
-import propTypes from 'prop-types';
 import styled from 'styled-components';
 import {useDispatch} from "react-redux";
 
@@ -22,17 +21,20 @@ const LoginForm = () => {
   const [id, onChangeId] = useInput('');
   const [password, onChangePassword] = useInput('');
 
-  const onsubmitForm = useCallback(() => {
+  const onSubmitForm = useCallback(() => {
     console.log(id, password);
-    dispatch(loginAction({id,password}));
+    dispatch(loginAction({
+      id,
+      password
+    }));
   },[id, password]);
 
   return (
-    <FormWrapper onFinish={onsubmitForm}>
+    <FormWrapper onFinish={onSubmitForm}>
       <div>
         <label htmlFor="user-id">아이디</label>
         <br />
-        <Input name="user-id" value={id} onChange={onChangeId} required/>
+        <Input name="user-id" value={id} onChange={onChangeId} required />
       </div>
       <div>
         <label htmlFor="user-password">비밀번호</label>

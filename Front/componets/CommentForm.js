@@ -1,7 +1,7 @@
 import {Button, Form, Input} from "antd";
 import {useCallback} from "react";
 import useInput from "../hooks/useInput";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import {useSelector} from "react-redux";
 
 const CommentForm = ({post}) => {
@@ -20,8 +20,8 @@ const CommentForm = ({post}) => {
   );
 };
 
-CommentForm.propTypes = {
-  post: propTypes.object.isRequired,
+CommentForm.PropTypes = {
+  post: PropTypes.object.isRequired,
 };
 
 export default CommentForm;

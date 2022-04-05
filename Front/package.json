@@ -8,14 +8,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "antd": "^4.19.3",
+    "@ant-design/icons": "^4.2.1",
+    "antd": "^4.3.0",
     "next": "^12.1.4",
     "next-redux-wrapper": "^7.0.5",
     "prop-types": "^15.8.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-redux": "^7.2.8",
+    "react-slick": "^0.28.1",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "styled-components": "^5.3.5"
