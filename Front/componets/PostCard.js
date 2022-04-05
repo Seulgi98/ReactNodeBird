@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import PropTypes from "prop-types";
-import {Avatar, Button, Card, Comment, Image, List, Popover} from "antd";
+import {Avatar, Button, Card, Comment, List, Popover} from "antd";
 import Connect from "react-redux/lib/connect/connect";
 import {EllipsisOutlined, HeartOutlined, HeartTwoTone, MessageOutlined, RetweetOutlined} from "@ant-design/icons";
 import {useSelector} from "react-redux";
