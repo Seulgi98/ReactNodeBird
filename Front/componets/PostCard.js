@@ -21,7 +21,7 @@ const PostCard = ({post}) => {
   return (
     <div>
       <Card
-        cover={post.Images[0] && <PostImages images={post.Images}/>}
+        cover={post.Images[0] && <PostImages images={post.Images}/>} //이미지가 1개 이상 있을 때
         // 배열안에 jsx를 넣을때는 key를 넣어줘야함
         actions={[
           <RetweetOutlined key="retweet"/>,

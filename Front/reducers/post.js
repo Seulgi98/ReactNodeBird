@@ -7,9 +7,11 @@ export const initialState = {
     },
     content: "첫번째 게시글 #첫줄 #벚꽃 #봄",
     Images: [{
-      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-vwknaKx809ep8zdiJu-rLTQBRMKSHVAbg&usqp=CAU",
+      src: "https://blog.kakaocdn.net/dn/WMbvI/btqYnnXpwRW/BFbLIOsHKrp1FZD0YTUCuK/img.png",
     }, {
-      src: "",
+      src: "https://post-phinf.pstatic.net/MjAxOTA0MDFfMjM4/MDAxNTU0MTAxMjkzMTE1.ns8zZ25jJghGukeRs4eTiA7o4DlAHQGBNgXwqdqD-9Mg.PWgGjA_tnusYkRV_OD1KHQ128zEENwInRN-oGHO9R5kg.JPEG/Cherry_Blossom-Korea.jpg?type=w1200",
+    }, {
+      src: "https://cdn.mhns.co.kr/news/photo/202103/501656_602737_2119.jpg",
     }],
     Comments: [{
       User: {
