@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08f8ef57-4aaf-477f-9db1-ef622f55ae9e" name="Changes" comment="Apply changed status &amp; Check eslint">
+    <list default="true" id="08f8ef57-4aaf-477f-9db1-ef622f55ae9e" name="Changes" comment="Posts &amp; comments saga">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/componets/PostForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/PostForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/reducers/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/reducers/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/reducers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sagas/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sagas/post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Front/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +85,7 @@
       <workItem from="1649115412899" duration="3121000" />
       <workItem from="1649118544754" duration="1572000" />
       <workItem from="1649120122901" duration="16681000" />
-      <workItem from="1649202032391" duration="23231000" />
+      <workItem from="1649202032391" duration="25710000" />
     </task>
     <task id="LOCAL-00001" summary="profile page">
       <created>1648996771722</created>
@@ -224,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649228793485</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Posts &amp; comments saga">
+      <created>1649256992964</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1649256992964</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +280,7 @@
     <MESSAGE value="Divide saga files &amp; Connect reducer" />
     <MESSAGE value="Action and state summary" />
     <MESSAGE value="Apply changed status &amp; Check eslint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Apply changed status &amp; Check eslint" />
+    <MESSAGE value="Posts &amp; comments saga" />
+    <option name="LAST_COMMIT_MESSAGE" value="Posts &amp; comments saga" />
   </component>
 </project>

@@ -1,3 +1,5 @@
+import shortId from "shortid";
+
 export const initialState = {
   mainPosts: [{
     id: 1,
@@ -62,23 +64,23 @@ export const addComment = (data) => ({
   data,
 });
 
-const dummyPost = {
-  id: 2,
-  content: 'dummy data',
+const dummyPost = (data) => ({
+  id: shortId.generate(),
+  content: data,
   User: {
     id: 1,
-    nickname: "어피치",
+    nickname: "사용자",
   },
   Images: [],
   Comments: [],
-};
+});
 
 const dummyComment = (data) => ({
   id: shortId.generate(),
   content: data,
   User: {
     id: 1,
-    nickname: '제로초',
+    nickname: '사용자',
   },
 });
 
@@ -94,7 +96,8 @@ const reducer = (state = initialState, action) => {
     case ADD_POST_SUCCESS:
       return {
         ...state,
-        mainPosts: [dummyPost, ...state.mainPosts], //앞에 추가해야 게시글이 위에서부터 추가됨
+        //sagas post로 부터 가져
+        mainPosts: [dummyPost(action.data ), ...state.mainPosts], //앞에 추가해야 게시글이 위에서부터 추가됨
         addPostLoading: false,
         addPostDone: true,
       };

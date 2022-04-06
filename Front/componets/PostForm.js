@@ -17,7 +17,7 @@ const PostForm = () => {
 
   const dispatch = useDispatch();
   const onSubmit = useCallback(() => {
-    dispatch(addPost(text));
+    dispatch(addPost(text)); //트윗 작성 text
     setText(''); //text를 초기화 시킴(트윗 날리고 초기화)
   }, [text]);
 
