@@ -97,7 +97,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         //sagas post로 부터 가져
-        mainPosts: [dummyPost(action.data ), ...state.mainPosts], //앞에 추가해야 게시글이 위에서부터 추가됨
+        mainPosts: [dummyPost(action.data), ...state.mainPosts], //앞에 추가해야 게시글이 위에서부터 추가됨
         addPostLoading: false,
         addPostDone: true,
       };
@@ -107,13 +107,20 @@ const reducer = (state = initialState, action) => {
         addPostLoading: false,
         addPostError: action.error,
       };
-    case ADD_COMMENT_REQUEST:
+    case ADD_COMMENT_REQUEST: {
+      // action.data.content, postId, userId
+      const postIndex = state.mainPosts.findIndex((v) => v.id === action.data.postId);
+      const post = state.mainPosts[postIndex];
+      post.Comments = [dummyComment(action.data.content), ...post.Comments];
+      const mainPosts = [...state.mainPosts];
+      mainPosts[postIndex] = post;
       return {
         ...state,
         addCommentLoading: true,
         addCommentDone: false,
         addCommentError: null,
       };
+    }
     case ADD_COMMENT_SUCCESS:
       return {
         ...state,
