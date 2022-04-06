@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08f8ef57-4aaf-477f-9db1-ef622f55ae9e" name="Changes" comment="Post Form">
-      <change afterPath="$PROJECT_DIR$/Front/componets/PostImages.js" afterDir="false" />
+    <list default="true" id="08f8ef57-4aaf-477f-9db1-ef622f55ae9e" name="Changes" comment="PostImages modify">
+      <change afterPath="$PROJECT_DIR$/Front/sagas/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/PostCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/PostCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/componets/AppLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/AppLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/componets/CommentForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/CommentForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/componets/PostForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/PostForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/componets/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/UserProfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/reducers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/store/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/store/configureStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Front/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +28,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -40,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/componets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -49,6 +61,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Front/componets" />
+      <recent name="$PROJECT_DIR$/Front/componets/ImagesZoom" />
+      <recent name="$PROJECT_DIR$/Front/reducers" />
+      <recent name="$PROJECT_DIR$/Front" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Front/pages" />
     </key>
@@ -66,7 +84,10 @@
       <workItem from="1648953747865" duration="9288000" />
       <workItem from="1649029727535" duration="6913000" />
       <workItem from="1649046780780" duration="13754000" />
-      <workItem from="1649115412899" duration="1075000" />
+      <workItem from="1649115412899" duration="3121000" />
+      <workItem from="1649118544754" duration="1572000" />
+      <workItem from="1649120122901" duration="16681000" />
+      <workItem from="1649202032391" duration="4033000" />
     </task>
     <task id="LOCAL-00001" summary="profile page">
       <created>1648996771722</created>
@@ -124,7 +145,56 @@
       <option name="project" value="LOCAL" />
       <updated>1649057982572</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Integrate with Redux">
+      <created>1649116803182</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1649116803182</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Comment implementation">
+      <created>1649119006605</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1649119006605</updated>
+    </task>
+    <task id="LOCAL-00011" summary="PostImages implementation">
+      <created>1649120544564</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1649120544564</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Loading Error Solved">
+      <created>1649134405781</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1649134405781</updated>
+    </task>
+    <task id="LOCAL-00013" summary="React-Slick">
+      <created>1649136197578</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1649136197578</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Post Hashtag">
+      <created>1649142090029</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1649142090029</updated>
+    </task>
+    <task id="LOCAL-00015" summary="PostImages modify">
+      <created>1649142325544</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1649142325544</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +220,14 @@
     <MESSAGE value="Middlewares and Devtools" />
     <MESSAGE value="Reducer division" />
     <MESSAGE value="Post Form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Post Form" />
+    <MESSAGE value="Integrate with Redux" />
+    <MESSAGE value="Comment implementation" />
+    <MESSAGE value="Postimages implementation" />
+    <MESSAGE value="PostImages implementation" />
+    <MESSAGE value="Loading Error Solved" />
+    <MESSAGE value="React-Slick" />
+    <MESSAGE value="Post Hashtag" />
+    <MESSAGE value="PostImages modify" />
+    <option name="LAST_COMMIT_MESSAGE" value="PostImages modify" />
   </component>
 </project>

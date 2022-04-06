@@ -14,7 +14,7 @@ const CommentForm = ({post}) => {
     <Form onFinish={onSubmitComment}>
       <Form.Item style={{position: "relative", margin: 0}}>
         <Input.TextArea value={commentText} onChange={onChangeCommentText} rows={4}/>
-        <Button style={{position: "absolute", right: 0, bottom: -40}} type="primary" htmlType="submit">Tweet</Button>
+        <Button style={{position: "absolute", right: 0, bottom: -40}} type="primary" htmlType="submit">트윗</Button>
       </Form.Item>
     </Form>
   );

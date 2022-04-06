@@ -7,6 +7,7 @@ import {createGlobalStyle} from "styled-components";
 import {Menu, Input, Row, Col} from "antd";
 import 'antd/dist/antd.css'
 import styled from 'styled-components'
+import {HomeOutlined, TwitterOutlined, UserOutlined, UserAddOutlined} from '@ant-design/icons';
 
 import UserProfile from '../componets/UserProfile';
 import LoginForm from '../componets/LoginForm';
@@ -37,16 +38,16 @@ const AppLayout = ({children}) => {
       <Global/>
       <Menu mode="horizontal">
         <Menu.Item>
-          <Link href="/"><a>노드 버드</a></Link>
+          <Link href="/"><a><HomeOutlined />홈</a></Link>
         </Menu.Item>
         <Menu.Item>
-          <Link href="/"><a>프로필</a></Link>
+          <Link href="/"><a><UserOutlined />프로필</a></Link>
         </Menu.Item>
         <Menu.Item>
           <SearchInput enterButton />
         </Menu.Item>
         <Menu.Item>
-          <Link href="/"><a>회원가입</a></Link>
+          <Link href="/"><a><UserAddOutlined />회원가입</a></Link>
         </Menu.Item>
       </Menu>
       <Row gutter={8}>
@@ -57,7 +58,7 @@ const AppLayout = ({children}) => {
         {children}
         </Col>
         <Col xs={24} md={6}>
-          <a href="https://github.com/Seulgi98" target="_blank" rel="noreferrer noopener">Made by seulgi98</a>
+          <a href="https://github.com/Seulgi98" target="_blank" rel="noreferrer noopener"><TwitterOutlined/> Twitter Clone : Made by seulgi98</a>
         </Col>
       </Row>
     </div>
