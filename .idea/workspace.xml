@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08f8ef57-4aaf-477f-9db1-ef622f55ae9e" name="Changes" comment="Saga effects(take, takeEvery, takeLatest, takeReading, throttle)">
-      <change afterPath="$PROJECT_DIR$/Front/sagas/post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front/sagas/user.js" afterDir="false" />
+    <list default="true" id="08f8ef57-4aaf-477f-9db1-ef622f55ae9e" name="Changes" comment="Divide saga files &amp; Connect reducer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/UserProfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/reducers/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/reducers/post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/reducers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sagas/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sagas/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sagas/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/sagas/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/sagas/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Front/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +84,7 @@
       <workItem from="1649115412899" duration="3121000" />
       <workItem from="1649118544754" duration="1572000" />
       <workItem from="1649120122901" duration="16681000" />
-      <workItem from="1649202032391" duration="8325000" />
+      <workItem from="1649202032391" duration="12551000" />
     </task>
     <task id="LOCAL-00001" summary="profile page">
       <created>1648996771722</created>
@@ -207,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649207783632</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Divide saga files &amp; Connect reducer">
+      <created>1649212265958</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1649212265958</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +248,7 @@
     <MESSAGE value="PostImages modify" />
     <MESSAGE value="Redux Saga effect" />
     <MESSAGE value="Saga effects(take, takeEvery, takeLatest, takeReading, throttle)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Saga effects(take, takeEvery, takeLatest, takeReading, throttle)" />
+    <MESSAGE value="Divide saga files &amp; Connect reducer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Divide saga files &amp; Connect reducer" />
   </component>
 </project>
