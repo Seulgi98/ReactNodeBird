@@ -3,18 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="08f8ef57-4aaf-477f-9db1-ef622f55ae9e" name="Changes" comment="Apply changed status &amp; Check eslint">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/Front/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/AppLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/AppLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/CommentForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/CommentForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/ImagesZoom/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/ImagesZoom/styles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/PostForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/PostForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/componets/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/componets/UserProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/hooks/useInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/hooks/useInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/pages/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pages/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pages/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/reducers/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/reducers/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/reducers/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Front/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/componets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Front/reducers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -66,9 +57,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Front/reducers" />
       <recent name="$PROJECT_DIR$/Front/componets" />
       <recent name="$PROJECT_DIR$/Front/componets/ImagesZoom" />
-      <recent name="$PROJECT_DIR$/Front/reducers" />
       <recent name="$PROJECT_DIR$/Front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -91,7 +82,7 @@
       <workItem from="1649115412899" duration="3121000" />
       <workItem from="1649118544754" duration="1572000" />
       <workItem from="1649120122901" duration="16681000" />
-      <workItem from="1649202032391" duration="18998000" />
+      <workItem from="1649202032391" duration="23231000" />
     </task>
     <task id="LOCAL-00001" summary="profile page">
       <created>1648996771722</created>
@@ -226,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649220393148</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Apply changed status &amp; Check eslint">
+      <created>1649228793485</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1649228793485</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +235,14 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="346" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="426" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -264,6 +269,7 @@
     <MESSAGE value="Saga effects(take, takeEvery, takeLatest, takeReading, throttle)" />
     <MESSAGE value="Divide saga files &amp; Connect reducer" />
     <MESSAGE value="Action and state summary" />
-    <option name="LAST_COMMIT_MESSAGE" value="Action and state summary" />
+    <MESSAGE value="Apply changed status &amp; Check eslint" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apply changed status &amp; Check eslint" />
   </component>
 </project>

@@ -1,17 +1,26 @@
 export const initialState = {
-  logInLoading: false, //로그인 시도중
+  followLoading: false, // 팔로우 시도중
+  followDone: false,
+  followError: null,
+  unfollowLoading: false, // 언팔로우 시도중
+  unfollowDone: false,
+  unfollowError: null,
+  logInLoading: false, // 로그인 시도중
   logInDone: false,
   logInError: null,
-  logOutLoading: false,//로그아웃 시도중
+  logOutLoading: false, // 로그아웃 시도중
   logOutDone: false,
   logOutError: null,
-  singUpLoading: false,//회원가입 시도중
-  singUpDone: false,
-  singUpError: null,
+  signUpLoading: false, // 회원가입 시도중
+  signUpDone: false,
+  signUpError: null,
+  changeNicknameLoading: false, // 닉네임 변경 시도중
+  changeNicknameDone: false,
+  changeNicknameError: null,
   me: null,
   signUpData: {},
   loginData: {},
-}
+};
 
 export const LOG_IN_REQUEST = 'LOG_IN_REQUEST';
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
@@ -25,6 +34,10 @@ export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
 
+export const CHANGE_NICKNAME_REQUEST = 'CHANGE_NICKNAME_REQUEST';
+export const CHANGE_NICKNAME_SUCCESS = 'CHANGE_NICKNAME_SUCCESS';
+export const CHANGE_NICKNAME_FAILURE = 'CHANGE_NICKNAME_FAILURE';
+
 export const FOLLOW_REQUEST = 'FOLLOW_REQUEST';
 export const FOLLOW_SUCCESS = 'FOLLOW_SUCCESS';
 export const FOLLOW_FAILURE = 'FOLLOW_FAILURE';
@@ -32,6 +45,10 @@ export const FOLLOW_FAILURE = 'FOLLOW_FAILURE';
 export const UNFOLLOW_REQUEST = 'UNFOLLOW_REQUEST';
 export const UNFOLLOW_SUCCESS = 'UNFOLLOW_SUCCESS';
 export const UNFOLLOW_FAILURE = 'UNFOLLOW_FAILURE';
+
+export const ADD_POST_TO_ME = 'ADD_POST_TO_ME';
+export const REMOVE_POST_OF_ME = 'REMOVE_POST_OF_ME';
+
 
 const dummyUser = (data) => ({
   ...data,
@@ -114,24 +131,24 @@ const reducer = (state = initialState, action) => {
         logOutLoading: false,
         logOutError: action.error,
       };
-    case SIGN_UP_REQUEST:
+    case CHANGE_NICKNAME_REQUEST:
       return {
         ...state,
-        signUpLoading: true,
-        signUpDone: false,
-        signUpError:null,
+        changeNickNameLoading: true,
+        changeNickNameDone: false,
+        changeNickNameError:null,
       };
-    case SIGN_UP_SUCCESS:
+    case CHANGE_NICKNAME_SUCCESS:
       return {
         ...state,
-        signUpLoading: false,
-        signUpDone: true,
+        changeNickNameLoading: false,
+        changeNickNameDone: true,
       };
-    case SIGN_UP_FAILURE:
+    case CHANGE_NICKNAME_FAILURE:
       return {
         ...state,
-        signUpLoading: false,
-        signUpError: action.error,
+        changeNickNameLoading: false,
+        changeNickNameError: action.error,
       };
     default:
       return state;
