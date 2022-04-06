@@ -1,24 +1,30 @@
 import {Button, Form, Input} from 'antd';
-import {useCallback, useState, useRef} from "react";
+import {useCallback, useRef, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
+
 import {addPost} from "../reducers/post";
+import useInput from "../hooks/useInput";
 
 const PostForm = () => {
-  const {imagePaths} = useSelector((state) => state.post);
-  const [text, setText] = useState('');
+  const {imagePaths, addPostDone} = useSelector((state) => state.post);
+  const [text, onChangeText, setText] = useInput('');
+
+  useEffect(() => {
+    if (addPostDone) {
+      setText('');
+    }
+  }, [addPostDone]);
+
   const dispatch = useDispatch();
+  const onSubmit = useCallback(() => {
+    dispatch(addPost(text));
+    setText(''); //text를 초기화 시킴(트윗 날리고 초기화)
+  }, [text]);
+
   const imageInput = useRef();
-  //글자 입력 보여주기
-  const onChangeText = useCallback((e) => {
-    setText(e.target.value);
-  }, []);
   const onClickImageUpload = useCallback(() => {
     imageInput.current.click();
   }, [imageInput.current]);
-  const onSubmit = useCallback(() => {
-    dispatch(addPost)
-    setText('');
-  }, []);
 
   return (
     <Form style={{margin: "10px 0 20px"}} encType="multipart/form-data" onFinish={onSubmit}>

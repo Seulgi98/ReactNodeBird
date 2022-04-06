@@ -6,13 +6,14 @@ import styled from 'styled-components';
 import AppLayout from "../componets/AppLayout";
 import useInput from "../hooks/useInput";
 import Error from "next/error";
+import {SIGN_UP_REQUEST} from "../reducers/user";
 
 const ErrorMessage = styled.div`
   color: red;
 `
 
 const Signup = () => {
-  const [id, onChangeId] = useInput('');
+  const [email, onChangeEmail] = useInput('');
   const [nickname, onChangeNickname] = useInput('');
   const [password, onChangePassword] = useInput('');
 
@@ -38,8 +39,13 @@ const Signup = () => {
     if (!term) {
       return setTermError(true);
     }
-    console.log(id, nickname, password)
-  }, [password, passwordCheck, term]);
+    console.log(email, nickname, password);
+    dispatch({
+      type: SIGN_UP_REQUEST,
+      data: {email}
+    })
+
+  }, [email, password, passwordCheck, term]);
 
   return (
     <AppLayout>
@@ -49,9 +55,9 @@ const Signup = () => {
       <AppLayout>회원가입 페이지</AppLayout>
       <Form onFinish={onSubmit}>
         <div>
-          <label htmlFor="user-id">아이디</label>
+          <label htmlFor="user-email">아이디</label>
           <br/>
-          <Input name="user-id" value={id} required onChange={onChangeId}/>
+          <Input name="user-email" type="email" value={email} required onChange={onChangeEmail}/>
         </div>
         <div>
           <label htmlFor="user-nick">닉네임</label>
@@ -59,7 +65,7 @@ const Signup = () => {
           <Input name="user-nick" value={nickname} required onChange={onChangeNickname}/>
         </div>
         <div>
-          <label htmlFor="user-id">비밀번호</label>
+          <label htmlFor="user-password">비밀번호</label>
           <br/>
           <Input name="user-password" type="password" value={password} required onChange={onChangePassword}/>
         </div>
@@ -80,7 +86,7 @@ const Signup = () => {
           {termError && <ErrorMessage style={{color:'red'}}>약관에 동의하셔야 합니다.</ErrorMessage>}
         </div>
         <div style={{marginTop: 10}}>
-          <Button type="primary" htmlType="submit">가입하기</Button>
+          <Button type="primary" htmlType="submit" loading={signUpLoading}>가입하기</Button>
         </div>
       </Form>
     </AppLayout>
