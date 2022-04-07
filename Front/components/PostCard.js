@@ -109,10 +109,10 @@ const PostCard = ({ post }) => {
   return (
     <CardWrapper key={post.id}>
       <Card
-        cover={post.Images[0] && <PostImages images={post.Images} />}
+        cover={post.Images[0] && <PostImages images={post.Images} />} //이미지가 1개 이상 있을 때
         actions={[
           <RetweetOutlined key="retweet" />,
-          liked
+          liked //좋아요를 눌렀을때 꽉 찬 하트
             ? <HeartTwoTone twoToneColor="#eb2f96" key="heart" onClick={onToggleLike} />
             : <HeartOutlined key="heart" onClick={onToggleLike} />,
           <MessageOutlined key="message" onClick={onToggleComment} />,
@@ -121,10 +121,10 @@ const PostCard = ({ post }) => {
             content={(
               <Button.Group>
                 {id && post.User.id === id
-                  ? (
+                  ? ( //게시글 id와 로그인 id가 같다면
                     <>
                       <Button>수정</Button>
-                      <Button type="danger">삭제</Button>
+                      <Button type="danger" loading={removePostLoading} onClick={onRemovePost}>삭제</Button>
                     </>
                   )
                   : <Button>신고</Button>}

@@ -26,7 +26,7 @@ function loadPostsAPI(data) {
 function* loadPosts(action) {
   try {
     // const result = yield call(loadPostsAPI, action.data);
-    yield delay(1000);
+    yield delay(400);
     yield put({
       type: LOAD_POSTS_SUCCESS,
       data: generateDummyPost(10),
@@ -47,7 +47,7 @@ function addPostAPI(data) {
 function* addPost(action) {
   try {
     // const result = yield call(addPostAPI, action.data);
-    yield delay(1000);
+    yield delay(400);
     const id = shortId.generate();
     yield put({
       type: ADD_POST_SUCCESS,
@@ -76,7 +76,7 @@ function removePostAPI(data) {
 function* removePost(action) {
   try {
     // const result = yield call(removePostAPI, action.data);
-    yield delay(1000);
+    yield delay(400);
     yield put({
       type: REMOVE_POST_SUCCESS,
       data: action.data,
@@ -101,7 +101,7 @@ function addCommentAPI(data) {
 function* addComment(action) {
   try {
     // const result = yield call(addCommentAPI, action.data);
-    yield delay(1000);
+    yield delay(400);
     yield put({
       type: ADD_COMMENT_SUCCESS,
       data: action.data,

@@ -27,7 +27,7 @@ function* logIn(action) {
   try {
     console.log('saga logIn');
     // const result = yield call(logInAPI);
-    yield delay(1000);
+    yield delay(300);
     yield put({
       type: LOG_IN_SUCCESS,
       data: action.data,
@@ -48,7 +48,7 @@ function logOutAPI() {
 function* logOut() {
   try {
     // const result = yield call(logOutAPI);
-    yield delay(1000);
+    yield delay(300);
     yield put({
       type: LOG_OUT_SUCCESS,
     });
@@ -68,7 +68,7 @@ function signUpAPI() {
 function* signUp() {
   try {
     // const result = yield call(signUpAPI);
-    yield delay(1000);
+    yield delay(300);
     yield put({
       type: SIGN_UP_SUCCESS,
     });
@@ -88,7 +88,7 @@ function followAPI() {
 function* follow(action) {
   try {
     // const result = yield call(followAPI);
-    yield delay(1000);
+    yield delay(300);
     yield put({
       type: FOLLOW_SUCCESS,
       data: action.data,
@@ -109,7 +109,7 @@ function unfollowAPI() {
 function* unfollow(action) {
   try {
     // const result = yield call(unfollowAPI);
-    yield delay(1000);
+    yield delay(300);
     yield put({
       type: UNFOLLOW_SUCCESS,
       data: action.data,

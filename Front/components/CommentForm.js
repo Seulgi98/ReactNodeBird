@@ -29,7 +29,7 @@ const CommentForm = ({post}) => {
     <Form onFinish={onSubmitComment}>
       <Form.Item style={{position: "relative", margin: 0}}>
         <Input.TextArea value={commentText} onChange={onChangeCommentText} rows={4}/>
-        <Button style={{position: "absolute", right: 0, bottom: -40, zIndex: 1}}
+        <Button style={{position: "absolute", right: 0, bottom: -40, zIndex: 1, borderRadius: '20px'}}
                 type="primary"
                 htmlType="submit"
                 loading={addCommentLoading}
