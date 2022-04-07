@@ -1,15 +1,14 @@
-import React, {useCallback} from 'react';
-import {Form, Input, Button} from 'antd';
+import React, { useCallback } from 'react';
+import { Form, Input, Button } from 'antd';
 import Link from 'next/link';
 import styled from 'styled-components';
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 
-import useInput from "../hooks/useInput";
-import {loginRequestAction} from "../reducers/user";
+import useInput from '../hooks/useInput';
+import { LOG_IN_REQUEST } from '../reducers/user';
 
-//styled-components
 const ButtonWrapper = styled.div`
-  margin-Top: 10px;
+  margin-top: 10px;
 `;
 
 const FormWrapper = styled(Form)`
@@ -18,14 +17,17 @@ const FormWrapper = styled(Form)`
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const {logInLoading} = useSelector((state) => state.user );
+  const { logInLoading } = useSelector((state) => state.user);
   const [email, onChangeEmail] = useInput('');
   const [password, onChangePassword] = useInput('');
 
   const onSubmitForm = useCallback(() => {
     console.log(email, password);
-    dispatch(loginRequestAction({email, password}));
-  },[email, password]);
+    dispatch({
+      type: LOG_IN_REQUEST,
+      data: { email, password },
+    });
+  }, [email, password]);
 
   return (
     <FormWrapper onFinish={onSubmitForm}>
@@ -52,6 +54,5 @@ const LoginForm = () => {
     </FormWrapper>
   );
 };
-
 
 export default LoginForm;

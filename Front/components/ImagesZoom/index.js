@@ -30,7 +30,6 @@ const ImagesZoom = ({ images, onClose }) => {
             ))}
           </Slick>
           <Indicator>
-            {/*하단에 몇번째를 보고있는지에 대한것*/}
             <div>
               {currentSlide + 1}
               {' '}

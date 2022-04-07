@@ -1,38 +1,46 @@
-import axios from "axios";import shortId from "shortid";
-import {delay, put, takeLatest, all, fork} from "redux-saga/effects";
+import axios from 'axios';
+import shortId from 'shortid';
+import { all, delay, fork, put, takeLatest, throttle } from 'redux-saga/effects';
+
 import {
   ADD_COMMENT_FAILURE,
   ADD_COMMENT_REQUEST,
   ADD_COMMENT_SUCCESS,
   ADD_POST_FAILURE,
   ADD_POST_REQUEST,
-  ADD_POST_SUCCESS, REMOVE_POST_FAILURE,
-  REMOVE_POST_REQUEST, REMOVE_POST_SUCCESS
-} from "../reducers/post";
-import {ADD_POST_TO_ME, REMOVE_POST_OF_ME} from "../reducers/user";
+  ADD_POST_SUCCESS,
+  generateDummyPost,
+  LOAD_POSTS_FAILURE,
+  LOAD_POSTS_REQUEST,
+  LOAD_POSTS_SUCCESS,
+  REMOVE_POST_FAILURE,
+  REMOVE_POST_REQUEST,
+  REMOVE_POST_SUCCESS,
+} from '../reducers/post';
+import { ADD_POST_TO_ME, REMOVE_POST_OF_ME } from '../reducers/user';
 
-// function loadPostsAPI(data) {
-//   return axios.get('/api/posts', data);
-// }
+function loadPostsAPI(data) {
+  return axios.get('/api/posts', data);
+}
 
-// function* loadPosts(action) {
-//   try {
-//     // const result = yield call(loadPostsAPI, action.data);
-//     yield delay(1000);
-//     yield put({
-//       type: LOAD_POSTS_SUCCESS,
-//       data: generateDummyPost(10),
-//     });
-//   } catch (err) {
-//     console.error(err);
-//     yield put({
-//       type: LOAD_POSTS_FAILURE,
-//       data: err.response.data,
-//     });
-//   }
-// }
+function* loadPosts(action) {
+  try {
+    // const result = yield call(loadPostsAPI, action.data);
+    yield delay(1000);
+    yield put({
+      type: LOAD_POSTS_SUCCESS,
+      data: generateDummyPost(10),
+    });
+  } catch (err) {
+    console.error(err);
+    yield put({
+      type: LOAD_POSTS_FAILURE,
+      data: err.response.data,
+    });
+  }
+}
 
-function addPostAPI(data) { //얘는 *붙이면 error 발생
+function addPostAPI(data) {
   return axios.post('/api/post', data);
 }
 
@@ -61,27 +69,24 @@ function* addPost(action) {
   }
 }
 
-function removePostAPI(data) { //얘는 *붙이면 error 발생
+function removePostAPI(data) {
   return axios.delete('/api/post', data);
 }
 
 function* removePost(action) {
   try {
-    yield delay(1000);
     // const result = yield call(removePostAPI, action.data);
+    yield delay(1000);
     yield put({
-      //post reducer 조작
       type: REMOVE_POST_SUCCESS,
-      data: action.data, //삭제하는 게시글의 id가 들어가있음
-      // data: result.data
+      data: action.data,
     });
-    //user reducer 조작
-    yield put ({
+    yield put({
       type: REMOVE_POST_OF_ME,
       data: action.data,
     });
   } catch (err) {
-    console.log(err)
+    console.error(err);
     yield put({
       type: REMOVE_POST_FAILURE,
       data: err.response.data,
@@ -89,18 +94,17 @@ function* removePost(action) {
   }
 }
 
-function addCommentAPI(data) { //얘는 *붙이면 error 발생
+function addCommentAPI(data) {
   return axios.post(`/api/post/${data.postId}/comment`, data);
 }
 
 function* addComment(action) {
   try {
-    yield delay(1000);
     // const result = yield call(addCommentAPI, action.data);
+    yield delay(1000);
     yield put({
       type: ADD_COMMENT_SUCCESS,
       data: action.data,
-      // data: result.data
     });
   } catch (err) {
     yield put({
@@ -108,6 +112,10 @@ function* addComment(action) {
       data: err.response.data,
     });
   }
+}
+
+function* watchLoadPosts() {
+  yield throttle(5000, LOAD_POSTS_REQUEST, loadPosts);
 }
 
 function* watchAddPost() {
@@ -118,14 +126,15 @@ function* watchRemovePost() {
   yield takeLatest(REMOVE_POST_REQUEST, removePost);
 }
 
-function* watchCommentPost() {
+function* watchAddComment() {
   yield takeLatest(ADD_COMMENT_REQUEST, addComment);
 }
 
-export default function* postSaga(){
+export default function* postSaga() {
   yield all([
     fork(watchAddPost),
+    fork(watchLoadPosts),
     fork(watchRemovePost),
-    fork(watchCommentPost),
+    fork(watchAddComment),
   ]);
 }
