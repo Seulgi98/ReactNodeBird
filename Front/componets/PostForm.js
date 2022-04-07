@@ -1,13 +1,19 @@
 import {Button, Form, Input} from 'antd';
-import {useCallback, useRef, useEffect} from "react";
+import {useCallback, useRef, useEffect, useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 
-import {addPost} from "../reducers/post";
+import {ADD_POST_REQUEST} from "../reducers/post";
 import useInput from "../hooks/useInput";
 
 const PostForm = () => {
+  const dispatch = useDispatch();
   const {imagePaths, addPostDone} = useSelector((state) => state.post);
-  const [text, onChangeText, setText] = useInput('');
+  const [text, setText] = useState('');
+
+  const imageInput = useRef();
+  const onClickImageUpload = useCallback(() => {
+    imageInput.current.click();
+  }, [imageInput.current]);
 
   useEffect(() => {
     if (addPostDone) {
@@ -15,19 +21,19 @@ const PostForm = () => {
     }
   }, [addPostDone]);
 
-  const dispatch = useDispatch();
-  const onSubmit = useCallback(() => {
-    dispatch(addPost(text)); //트윗 작성 text
-    setText(''); //text를 초기화 시킴(트윗 날리고 초기화)
+  const onSubmitForm = useCallback(() => {
+    dispatch({
+      type: ADD_POST_REQUEST,
+      data: text,
+    });
   }, [text]);
 
-  const imageInput = useRef();
-  const onClickImageUpload = useCallback(() => {
-    imageInput.current.click();
-  }, [imageInput.current]);
+  const onChangeText = useCallback((e) => {
+    setText(e.target.value);
+  }, []);
 
   return (
-    <Form style={{margin: "10px 0 20px"}} encType="multipart/form-data" onFinish={onSubmit}>
+    <Form style={{margin: "10px 0 20px"}} encType="multipart/form-data" onFinish={onSubmitForm}>
       <Input.TextArea
         value={text}
         onChange={onChangeText}

@@ -35,9 +35,16 @@ export const initialState = {
     }]
   }],
   imagePaths: [],
+  hasMorePosts: true,
+  loadPostsLoading: false,
+  loadPostsDone: false,
+  loadPostsError: null,
   addPostLoading: false,
   addPostDone: false,
   addPostError: null,
+  removePostLoading: false,
+  removePostDone: false,
+  removePostError: null,
   addCommentLoading: false,
   addCommentDone: false,
   addCommentError: null,
@@ -90,7 +97,7 @@ const dummyComment = (data) => ({
     nickname: '사용자',
   },
 });
-
+// 이전 상태를 액션을 통해 다음 상태로 만들어내는 함수(불변성은 지키면서)
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST_REQUEST:
@@ -108,6 +115,27 @@ const reducer = (state = initialState, action) => {
         addPostLoading: false,
         addPostDone: true,
       };
+    case REMOVE_POST_FAILURE:
+      return {
+        ...state,
+        removePostLoading: false,
+        removePostError: action.error,
+      };
+    case REMOVE_POST_REQUEST:
+      return {
+        ...state,
+        removePostLoading: true,
+        removePostDone: false,
+        removePostError: null,
+      };
+    case REMOVE_POST_SUCCESS:
+      return {
+        ...state,
+        //sagas post로 부터 가져
+        mainPosts: state.mainPosts.filter((v) => v.id !== action.data),
+        removePostLoading: false,
+        removePostDone: true,
+      };
     case ADD_POST_FAILURE:
       return {
         ...state,
@@ -116,11 +144,11 @@ const reducer = (state = initialState, action) => {
       };
     case ADD_COMMENT_REQUEST: {
       // action.data.content, postId, userId
-      const postIndex = state.mainPosts.findIndex((v) => v.id === action.data.postId);
-      const post = state.mainPosts[postIndex];
-      post.Comments = [dummyComment(action.data.content), ...post.Comments];
-      const mainPosts = [...state.mainPosts];
-      mainPosts[postIndex] = post;
+      // const postIndex = state.mainPosts.findIndex((v) => v.id === action.data.postId);
+      // const post = state.mainPosts[postIndex];
+      // post.Comments = [dummyComment(action.data.content), ...post.Comments];
+      // const mainPosts = [...state.mainPosts];
+      // mainPosts[postIndex] = post;
       return {
         ...state,
         addCommentLoading: true,
