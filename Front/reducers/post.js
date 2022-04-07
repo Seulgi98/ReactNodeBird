@@ -9,19 +9,26 @@ export const initialState = {
     },
     content: "첫번째 게시글 #첫줄 #벚꽃 #봄",
     Images: [{
+      id: shortId.generate(),
       src: "https://blog.kakaocdn.net/dn/WMbvI/btqYnnXpwRW/BFbLIOsHKrp1FZD0YTUCuK/img.png",
     }, {
+      id: shortId.generate(),
       src: "https://post-phinf.pstatic.net/MjAxOTA0MDFfMjM4/MDAxNTU0MTAxMjkzMTE1.ns8zZ25jJghGukeRs4eTiA7o4DlAHQGBNgXwqdqD-9Mg.PWgGjA_tnusYkRV_OD1KHQ128zEENwInRN-oGHO9R5kg.JPEG/Cherry_Blossom-Korea.jpg?type=w1200",
     }, {
+      id: shortId.generate(),
       src: "https://cdn.mhns.co.kr/news/photo/202103/501656_602737_2119.jpg",
     }],
     Comments: [{
+      id: shortId.generate(),
       User: {
+        id: shortId.generate(),
         nickname: "blossom._.",
       },
       content: "벚꽃 사진 너무 이쁜거 같아요🥰",
     }, {
+      id: shortId.generate(),
       User: {
+        id: shortId.generate(),
         nickname: "spring_S2",
       },
       content: "벚꽃🌸",
@@ -65,8 +72,8 @@ export const addComment = (data) => ({
 });
 
 const dummyPost = (data) => ({
-  id: shortId.generate(),
-  content: data,
+  id: data.id,
+  content: data.content,
   User: {
     id: 1,
     nickname: "사용자",

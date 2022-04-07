@@ -1,6 +1,8 @@
 import axios from "axios";
 import {delay, put, takeLatest, all, fork} from "redux-saga/effects";
 import {ADD_COMMENT_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_POST_FAILURE, ADD_POST_REQUEST, ADD_POST_SUCCESS} from "../reducers/post";
+import {ADD_POST_TO_ME} from "../reducers/user";
+import shortId from "shortid";
 
 
 function addPostAPI(data) { //얘는 *붙이면 error 발생
@@ -10,11 +12,19 @@ function addPostAPI(data) { //얘는 *붙이면 error 발생
 function* addPost(action) {
   try {
     yield delay(1000);
+    const id = shortId.generate();
     // const result = yield call(addPostAPI, action.data);
     yield put({
       type: ADD_POST_SUCCESS,
-      data: action.data,
+      data: {
+        id,
+        content: action.data,
+      },
       // data: result.data
+    });
+    yield put ({
+      type: ADD_POST_TO_ME,
+      data: id,
     });
   } catch (err) {
     yield put({

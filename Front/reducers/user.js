@@ -54,9 +54,9 @@ const dummyUser = (data) => ({
   ...data,
   nickname: 'seulgi98',
   id: 1,
-  Posts: [],
-  Followings: [],
-  Followers: [],
+  Posts: [{id: 1}],
+  Followings: [{nickname: 'a'}, {nickname: 'b'}, {nickname: 'c'}],
+  Followers: [{nickname: 'a'}, {nickname: 'b'}, {nickname: 'c'}],
 });
 
 // action creator
@@ -149,6 +149,22 @@ const reducer = (state = initialState, action) => {
         ...state,
         changeNickNameLoading: false,
         changeNickNameError: action.error,
+      };
+    case ADD_POST_TO_ME://게시글 수 업데이트
+      return {
+        ...state,
+        me: {
+          ...state.me,
+          Posts: [{id: action.data}, ...state.me.Posts],
+        },
+      };
+    case REMOVE_POST_OF_ME://게시글 삭제
+      return {
+        ...state,
+        me: {
+          ...state.me,
+          Posts: state.me.Posts.filter((v)=>v.id!==action.data),
+        },
       };
     default:
       return state;
