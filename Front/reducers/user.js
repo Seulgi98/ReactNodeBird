@@ -53,7 +53,7 @@ export const REMOVE_POST_OF_ME = 'REMOVE_POST_OF_ME';
 
 const dummyUser = (data) => ({
   ...data,
-  nickname: '지우',
+  nickname: '트위터',
   id: 1,
   Posts: [{id: 1}],
   Followings: [{nickname: '피카츄'}, {nickname: '라이츄'}, {nickname: '파이리'}],

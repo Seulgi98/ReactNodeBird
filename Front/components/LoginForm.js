@@ -30,14 +30,14 @@ const LoginForm = () => {
   }, [email, password]);
 
   return (
-    <FormWrapper onFinish={onSubmitForm} style={{marginLeft: '10px'}}>
+    <FormWrapper onFinish={onSubmitForm} style={{marginLeft: '10px', marginTop: '10px'}}>
       <div>
-        <label htmlFor="user-email">이메일</label>
+        <label htmlFor="user-email" style={{fontSize: '15px'}}>이메일</label>
         <br />
         <Input name="user-email" type="email" value={email} onChange={onChangeEmail} required />
       </div>
       <div>
-        <label htmlFor="user-password">비밀번호</label>
+        <label htmlFor="user-password" style={{fontSize: '15px', marginTop: '10px'}}>비밀번호</label>
         <br />
         <Input
           name="user-password"

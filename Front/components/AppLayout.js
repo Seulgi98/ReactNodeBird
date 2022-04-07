@@ -23,6 +23,7 @@ const AppLayout = ({ children }) => {
   return (
     <div>
       <Menu mode="horizontal">
+        <TwitterOutlined style={{color: '#33a1ff', fontSize: '24px', marginLeft: '10px', marginTop: '10px'}}/>
         <Menu.Item key="home"> <Link href="/"><a><HomeOutlined />홈</a></Link></Menu.Item>
         <Menu.Item key="notification"><Link href="/"><a><BellOutlined />알림</a></Link></Menu.Item>
         <Menu.Item key="mail"><Link href="/"><a><MailOutlined />쪽지</a></Link></Menu.Item>
@@ -31,7 +32,7 @@ const AppLayout = ({ children }) => {
         <Menu.Item key="profile"><Link href="/"><a><UserOutlined />프로필</a></Link></Menu.Item>
         <Menu.Item key="more"><Link href="/"><a><MoreOutlined />더보기</a></Link></Menu.Item>
         <Menu.Item key="search">
-          <Input.Search enterButton style={{ verticalAlign: 'middle' }} />
+          <Input.Search enterButton style={{ verticalAlign: 'middle', marginLeft: '90px' }} />
         </Menu.Item>
       </Menu>
       <Row gutter={8}>
