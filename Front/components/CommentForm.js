@@ -33,7 +33,7 @@ const CommentForm = ({post}) => {
                 type="primary"
                 htmlType="submit"
                 loading={addCommentLoading}
-        >트윗</Button>
+        >답글달기</Button>
       </Form.Item>
     </Form>
   );

@@ -30,7 +30,7 @@ const LoginForm = () => {
   }, [email, password]);
 
   return (
-    <FormWrapper onFinish={onSubmitForm}>
+    <FormWrapper onFinish={onSubmitForm} style={{marginLeft: '10px'}}>
       <div>
         <label htmlFor="user-email">이메일</label>
         <br />
@@ -47,9 +47,9 @@ const LoginForm = () => {
           required
         />
       </div>
-      <ButtonWrapper>
-        <Button type="primary" htmlType="submit" loading={logInLoading}>로그인</Button>
-        <Link href="/signup"><a><Button>회원가입</Button></a></Link>
+      <ButtonWrapper style={{marginTop: '10px'}}>
+        <Button type="primary" htmlType="submit" loading={logInLoading} style={{borderRadius:"20px"}}>로그인</Button>
+        <Link href="/signup"><a><Button style={{marginLeft: '10px', borderRadius:"20px"}}>회원가입</Button></a></Link>
       </ButtonWrapper>
     </FormWrapper>
   );

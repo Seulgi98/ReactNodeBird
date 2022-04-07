@@ -8,7 +8,7 @@ import wrapper from '../store/configureStore';
 const NodeBird = ({ Component }) => (
   <>
     <Head>
-      <title>NodeBird</title>
+      <title>Twitter Clone(Seulgi98)</title>
     </Head>
     <Component />
   </>
